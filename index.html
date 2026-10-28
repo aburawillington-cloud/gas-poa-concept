@@ -124,18 +124,22 @@ section{padding:132px 0}
 .plan .btn{width:100%;justify-content:center}
 .plan.feature{background:var(--ivory-2)}
 /* verify */
-.verify{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
-@media(max-width:880px){.verify{grid-template-columns:1fr}}
-.v{padding:44px 36px 44px 0;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
-.v:last-child{border-right:0}
-@media(max-width:880px){.v{border-right:0;padding-right:0}}
+.verify{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:stretch}
+.v-shot{margin:0;overflow:hidden}
+.v-shot img{width:100%;height:100%;object-fit:cover;filter:saturate(.92)}
+.v-stack{border-top:1px solid var(--line);align-self:start}
+.v{padding:30px 0;border-bottom:1px solid var(--line)}
 .v .mono{color:var(--ember)}
-.v h4{font-size:21px;margin:18px 0 10px}
-.v p{font-size:14px;font-weight:300;color:var(--body);line-height:1.75;max-width:300px}
+.v h4{font-size:21px;margin:12px 0 8px}
+.v p{font-size:14px;font-weight:300;color:var(--body);line-height:1.75;max-width:380px}
+@media(max-width:880px){.verify{grid-template-columns:1fr;gap:38px}.v-shot img{height:340px}}
 /* statement */
-.statement{background:var(--ink);color:var(--ivory);padding:146px 0;position:relative;overflow:hidden}
+.statement{background:var(--ink);color:var(--ivory);padding:158px 0;position:relative;overflow:hidden}
+.statement.has-img .bg{position:absolute;inset:0;z-index:0}
+.statement.has-img .bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:saturate(.85)}
+.statement.has-img .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,9,.9) 0%,rgba(11,10,9,.86) 50%,rgba(11,10,9,.94) 100%)}
 .statement::before{content:"";position:absolute;left:50%;bottom:-360px;transform:translateX(-50%);width:1000px;height:640px;
-  background:radial-gradient(ellipse,rgba(180,101,60,.2) 0%,transparent 66%);pointer-events:none}
+  background:radial-gradient(ellipse,rgba(180,101,60,.18) 0%,transparent 66%);pointer-events:none;z-index:1}
 .statement .wrap{position:relative;z-index:2;text-align:center;max-width:860px}
 .statement h2{font-size:clamp(34px,5vw,62px);margin-bottom:28px}
 .statement h2 em{font-style:italic;color:var(--ember-l)}
@@ -265,12 +269,12 @@ footer{background:var(--ink);color:var(--ivory);padding:96px 0 48px;border-top:1
 </section>
 
 <figure class="band-img">
-  <img src="assets/doorstep.jpg" alt="A sealed cylinder handed over at a doorway" />
+  <img src="assets/rider.jpg" alt="A Gas Poa rider at dusk on a Nairobi street" />
   <div class="overlay"></div>
   <div class="cap">
     <div class="wrap">
-      <p class="mono">Last mile</p>
-      <h3>Handed over at your door, <em>not left at a gate.</em></h3>
+      <p class="mono">The last mile</p>
+      <h3>Riders who ring the bell, <em>not the gate.</em></h3>
     </div>
   </div>
 </figure>
@@ -339,6 +343,8 @@ footer{background:var(--ink);color:var(--ivory);padding:96px 0 48px;border-top:1
       </div>
     </div>
     <div class="verify rv">
+      <figure class="v-shot"><img src="assets/detail.jpg" alt="Cylinder valve and tamper seal in close-up" /></figure>
+      <div class="v-stack">
       <div class="v">
         <p class="mono">Weight</p>
         <h4>Weighed in front of you</h4>
@@ -354,11 +360,13 @@ footer{background:var(--ink);color:var(--ivory);padding:96px 0 48px;border-top:1
         <h4>Nothing upfront</h4>
         <p>No deposit, no card on file. You pay the rider by M-Pesa once the cylinder is in your hands and the weight is confirmed.</p>
       </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="statement" id="order">
+<section class="statement has-img" id="order">
+  <div class="bg"><img src="assets/doorstep.jpg" alt="" /></div>
   <div class="wrap rv">
     <h2>Nobody should carry a cylinder <em>up four flights.</em></h2>
     <p>Tell us your estate and we will open service there next. Early households set the delivery routes.</p>
