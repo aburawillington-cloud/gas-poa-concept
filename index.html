@@ -3,148 +3,209 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gas Poa — Fixed-price LPG, delivered</title>
+<title>Gas Poa — Fixed-price LPG, delivered in Nairobi</title>
+<meta name="description" content="Fixed-price LPG cylinders delivered same day across Nairobi. One message to order, verified weight on arrival, pay by M-Pesa." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0C0B0A; --ink-soft:#171614; --ivory:#F6F3EC; --ivory-dim:#EDE8DD;
-  --line:#DBD5C7; --line-dark:#2A2825; --body:#4A463E; --muted:#8A8478;
-  --ember:#B8653A; --ember-soft:#D89A6E;
-  --ease:cubic-bezier(.22,.61,.36,1);
+  --ink:#0B0A09; --ink-2:#131210; --ivory:#F7F4ED; --ivory-2:#FBF9F4; --line:#DED8CA; --line-dark:#262320;
+  --body:#4B4740; --muted:#8B857A; --ember:#B4653C; --ember-l:#D59A72; --ease:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
-body{font-family:'Inter Tight',system-ui,sans-serif;background:var(--ivory);color:var(--ink);font-weight:400;line-height:1.6;font-size:16px}
-h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.015em}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
-.mono{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--muted)}
-/* ---------- NAV ---------- */
-nav{position:sticky;top:0;z-index:60;background:rgba(12,11,10,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-dark)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
-.brand{font-family:'Instrument Serif',serif;font-size:23px;color:var(--ivory);text-decoration:none;letter-spacing:.01em}
-.brand i{font-style:italic;color:var(--ember-soft)}
-nav ul{display:flex;gap:34px;list-style:none}
-nav a{color:#A8A296;text-decoration:none;font-size:13.5px;font-weight:400;letter-spacing:.01em;transition:color .35s var(--ease)}
-nav a:hover{color:var(--ivory)}
-.nav-cta{color:var(--ivory)!important;border-bottom:1px solid rgba(246,243,236,.3);padding-bottom:2px}
-/* ---------- HERO ---------- */
-.hero{background:var(--ink);color:var(--ivory);padding:118px 0 104px;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-160px;top:-120px;width:720px;height:720px;border-radius:50%;
-  background:radial-gradient(circle,rgba(184,101,58,.22) 0%,rgba(184,101,58,.06) 42%,transparent 68%);pointer-events:none}
-.hero .wrap{position:relative;z-index:2;max-width:960px}
-.kicker{display:flex;align-items:center;gap:12px;margin-bottom:44px}
-.kicker span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8F8878}
-.kicker .dash{width:44px;height:1px;background:var(--ember);opacity:.7}
-.hero h1{font-size:clamp(44px,6.6vw,86px);margin-bottom:30px}
-.hero h1 em{font-style:italic;color:var(--ember-soft)}
-.hero .lede{font-size:19px;color:#B5AFA2;max-width:520px;font-weight:300;line-height:1.65;margin-bottom:44px}
-.btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:2px;font-size:13.5px;font-weight:500;letter-spacing:.02em;text-decoration:none;transition:all .4s var(--ease);border:1px solid transparent}
+body{font-family:'Inter Tight',system-ui,sans-serif;background:var(--ivory);color:var(--ink);font-weight:400;line-height:1.6;font-size:16px;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.015em}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.mono{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--muted)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:80;opacity:.028;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:70;transition:background .5s var(--ease),border-color .5s var(--ease),backdrop-filter .5s}
+nav.solid{background:rgba(11,10,9,.88);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--line-dark)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{font-family:'Instrument Serif',serif;font-size:24px;color:var(--ivory);text-decoration:none;letter-spacing:.005em}
+.brand i{font-style:italic;color:var(--ember-l)}
+.navlinks{display:flex;align-items:center;gap:38px}
+.navlinks a{color:#9C968A;text-decoration:none;font-size:13px;letter-spacing:.02em;transition:color .4s var(--ease)}
+.navlinks a:hover{color:var(--ivory)}
+.nav-cta{color:var(--ivory);font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(247,244,237,.26);padding:11px 20px;text-decoration:none;transition:all .45s var(--ease)}
+.nav-cta:hover{background:var(--ivory);color:var(--ink);border-color:var(--ivory)}
+@media(max-width:900px){.navlinks a:not(.nav-cta){display:none}}
+/* HERO */
+.hero{background:var(--ink);color:var(--ivory);position:relative;overflow:hidden;padding:150px 0 0}
+.hero::before{content:"";position:absolute;left:-10%;top:-30%;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(180,101,60,.16) 0%,transparent 62%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:center}
+.hero-copy{max-width:560px}
+.kicker{display:flex;align-items:center;gap:14px;margin-bottom:40px}
+.kicker .dash{width:52px;height:1px;background:var(--ember);opacity:.85}
+.kicker span{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A8478}
+.hero h1{font-size:clamp(46px,5.6vw,82px);margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--ember-l)}
+.hero .lede{font-size:17.5px;color:#ADA79A;font-weight:200;line-height:1.72;max-width:460px;margin-bottom:42px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:all .45s var(--ease);cursor:pointer;background:none;font-family:inherit}
 .btn-solid{background:var(--ivory);color:var(--ink)}
-.btn-solid:hover{background:#fff;transform:translateY(-1px)}
-.btn-ghost{border-color:rgba(246,243,236,.24);color:var(--ivory)}
-.btn-ghost:hover{border-color:rgba(246,243,236,.6);background:rgba(246,243,236,.04)}
-.hero-foot{display:flex;gap:56px;flex-wrap:wrap;margin-top:88px;padding-top:30px;border-top:1px solid var(--line-dark)}
-.hero-foot div{font-size:13px;color:#8F8878;font-weight:300}
-.hero-foot b{display:block;font-family:'Instrument Serif',serif;font-size:21px;color:var(--ivory);font-weight:400;margin-bottom:2px}
-/* ---------- SECTIONS ---------- */
-section{padding:118px 0}
-.sec-head{display:grid;grid-template-columns:280px 1fr;gap:60px;margin-bottom:76px;align-items:start}
-.sec-head h2{font-size:clamp(32px,4.2vw,52px);max-width:600px}
+.btn-solid:hover{background:#fff;transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(247,244,237,.22);color:var(--ivory)}
+.btn-ghost:hover{border-color:rgba(247,244,237,.65);background:rgba(247,244,237,.05)}
+.btn-dark{background:var(--ink);color:var(--ivory)}
+.btn-dark:hover{background:#000;transform:translateY(-2px)}
+.btn-line{border-color:rgba(11,10,9,.2);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.hero-meta{display:flex;gap:52px;flex-wrap:wrap;margin-top:64px;padding-top:34px;border-top:1px solid var(--line-dark)}
+.hero-meta div{font-size:12px;color:#8A8478;font-weight:300;letter-spacing:.01em}
+.hero-meta b{display:block;font-family:'Instrument Serif',serif;font-size:22px;color:var(--ivory);font-weight:400;margin-bottom:3px;letter-spacing:0}
+.hero-img{position:relative;align-self:end}
+.hero-img img{width:100%;height:auto;filter:saturate(.92) contrast(1.02)}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,9,.35) 0%,transparent 26%,transparent 62%,rgba(11,10,9,.85) 100%);pointer-events:none}
+.img-tag{position:absolute;left:0;bottom:22px;z-index:3;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#B9B3A5}
+@media(max-width:900px){.hero{padding-top:126px}.hero-grid{grid-template-columns:1fr;gap:52px}.hero-img{order:2;max-width:460px}.hero-meta{gap:34px}}
+/* MARQUEE */
+.strip{background:var(--ink);border-top:1px solid var(--line-dark);overflow:hidden;padding:22px 0;position:relative}
+.strip::before,.strip::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2}
+.strip::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.strip::after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.track{display:flex;gap:56px;width:max-content;animation:slide 46s linear infinite}
+.track span{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E695F;white-space:nowrap}
+@keyframes slide{to{transform:translateX(-50%)}}
+/* SECTIONS */
+section{padding:132px 0}
+.sec-head{display:grid;grid-template-columns:260px 1fr;gap:64px;margin-bottom:80px;align-items:start}
+.sec-head h2{font-size:clamp(34px,4.2vw,54px);max-width:620px}
 .sec-head h2 em{font-style:italic;color:var(--ember)}
-.sec-head .note{color:var(--body);font-weight:300;font-size:16.5px;max-width:420px;margin-top:20px;line-height:1.7}
-@media(max-width:860px){.sec-head{grid-template-columns:1fr;gap:26px;margin-bottom:52px}}
+.sec-head .note{color:var(--body);font-weight:300;font-size:16px;max-width:400px;margin-top:22px;line-height:1.75}
+@media(max-width:900px){.sec-head{grid-template-columns:1fr;gap:24px;margin-bottom:54px}}
 /* steps */
 .steps{border-top:1px solid var(--line)}
-.step{display:grid;grid-template-columns:70px 1fr 1.1fr;gap:40px;padding:38px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.step .n{font-family:'Instrument Serif',serif;font-size:15px;color:var(--ember);letter-spacing:.06em}
-.step h3{font-size:26px}
-.step p{color:var(--body);font-weight:300;font-size:15.5px;line-height:1.7;max-width:420px}
-@media(max-width:760px){.step{grid-template-columns:44px 1fr;gap:12px 18px}.step p{grid-column:2}}
+.step{display:grid;grid-template-columns:64px 1fr 1.05fr;gap:44px;padding:42px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:background .5s var(--ease)}
+.step:hover{background:rgba(0,0,0,.012)}
+.step .n{font-family:'Instrument Serif',serif;font-size:14px;color:var(--ember);letter-spacing:.1em}
+.step h3{font-size:27px}
+.step p{color:var(--body);font-weight:300;font-size:15px;line-height:1.78;max-width:430px}
+@media(max-width:820px){.step{grid-template-columns:40px 1fr;gap:10px 20px;padding:32px 0}.step p{grid-column:2}}
 /* chat */
-.chat-shell{background:var(--ink);border:1px solid var(--line-dark);border-radius:3px;padding:38px 30px;max-width:420px;margin:0 auto}
-.chat-head{display:flex;align-items:center;gap:10px;padding-bottom:20px;border-bottom:1px solid var(--line-dark);margin-bottom:22px}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--ember)}
-.chat-head span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8F8878}
-.chat{display:flex;flex-direction:column;gap:12px}
-.bub{max-width:88%;padding:12px 16px;border-radius:3px;font-size:13.5px;font-weight:300;line-height:1.55}
-.me{align-self:flex-end;background:#26241F;color:#E8E3D7}
-.them{align-self:flex-start;background:#F6F3EC;color:#1A1815}
-.time{display:block;font-size:9.5px;letter-spacing:.1em;color:#7C766A;margin-top:6px}
+.chat-shell{background:var(--ink);padding:40px 32px;max-width:430px;margin:0 auto;border:1px solid var(--line-dark)}
+.chat-head{display:flex;align-items:center;gap:11px;padding-bottom:22px;border-bottom:1px solid var(--line-dark);margin-bottom:26px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--ember)}
+.chat-head span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8A8478}
+.chat{display:flex;flex-direction:column;gap:11px}
+.bub{max-width:89%;padding:12px 16px;font-size:13px;font-weight:300;line-height:1.6}
+.me{align-self:flex-end;background:#24221E;color:#E9E4D8}
+.them{align-self:flex-start;background:#F7F4ED;color:#1A1815}
+.time{display:block;font-size:9px;letter-spacing:.12em;color:#7B756A;margin-top:6px}
+/* image band */
+.band-img{position:relative;height:clamp(340px,52vw,620px);overflow:hidden;margin:0}
+.band-img img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:saturate(.9)}
+.band-img .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,9,.28) 0%,rgba(11,10,9,.06) 34%,rgba(11,10,9,.82) 100%)}
+.band-img .cap{position:absolute;left:0;right:0;bottom:52px;color:var(--ivory)}
+.cap .mono{color:#B5AFA1}
+.cap h3{font-size:clamp(26px,3.4vw,42px);max-width:640px;margin-top:16px}
+.cap h3 em{font-style:italic;color:var(--ember-l)}
 /* pricing */
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
-@media(max-width:860px){.plans{grid-template-columns:1fr}}
-.plan{padding:46px 36px 44px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);position:relative}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+@media(max-width:880px){.plans{grid-template-columns:1fr}}
+.plan{padding:48px 38px 46px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);position:relative;transition:background .5s var(--ease)}
 .plan:last-child{border-right:0}
-@media(max-width:860px){.plan{border-right:0;padding:38px 0}}
-.plan .flag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ember);height:16px;display:block}
-.plan h3{font-size:22px;margin:14px 0 4px}
-.plan .sub{font-size:13px;color:var(--muted);font-weight:300}
-.price{font-family:'Instrument Serif',serif;font-size:44px;letter-spacing:-.02em;margin:26px 0 4px}
-.price small{font-family:'Inter Tight',sans-serif;font-size:12.5px;color:var(--muted);font-weight:400;letter-spacing:0}
-.plan ul{list-style:none;margin:26px 0 32px}
-.plan li{font-size:14px;color:var(--body);font-weight:300;padding:9px 0;border-bottom:1px solid #E7E1D4;display:flex;gap:10px}
-.plan li::before{content:"";width:5px;height:5px;margin-top:8px;background:var(--ember);border-radius:50%;flex:0 0 5px;opacity:.75}
-.plan .btn{width:100%;justify-content:center;border:1px solid var(--ink);color:var(--ink)}
-.plan .btn:hover{background:var(--ink);color:var(--ivory)}
-.plan.feature{background:#FBF9F3}
-.plan.feature .btn{background:var(--ink);color:var(--ivory)}
-.plan.feature .btn:hover{background:#000}
-/* dark statement */
-.statement{background:var(--ink);color:var(--ivory);padding:130px 0;position:relative;overflow:hidden}
-.statement::before{content:"";position:absolute;left:50%;bottom:-320px;transform:translateX(-50%);width:900px;height:600px;
-  background:radial-gradient(ellipse,rgba(184,101,58,.18) 0%,transparent 65%);pointer-events:none}
-.statement .wrap{position:relative;z-index:2;text-align:center;max-width:820px}
-.statement h2{font-size:clamp(34px,5vw,60px);margin-bottom:26px}
-.statement h2 em{font-style:italic;color:var(--ember-soft)}
-.statement p{color:#A8A296;font-weight:300;font-size:17px;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto}
+.plan:hover{background:var(--ivory-2)}
+@media(max-width:880px){.plan{border-right:0;padding:38px 0}}
+.plan .flag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);height:14px;display:block;font-weight:500}
+.plan h3{font-size:23px;margin:16px 0 3px}
+.plan .sub{font-size:12.5px;color:var(--muted);font-weight:300}
+.price{font-family:'Instrument Serif',serif;font-size:46px;letter-spacing:-.02em;margin:28px 0 2px}
+.price small{font-family:'Inter Tight',sans-serif;font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+.plan ul{list-style:none;margin:28px 0 34px}
+.plan li{font-size:13.5px;color:var(--body);font-weight:300;padding:10px 0;border-bottom:1px solid #E9E3D6;display:flex;gap:12px;align-items:flex-start}
+.plan li::before{content:"";width:4px;height:4px;margin-top:9px;background:var(--ember);flex:0 0 4px;opacity:.8}
+.plan .btn{width:100%;justify-content:center}
+.plan.feature{background:var(--ivory-2)}
+/* verify */
+.verify{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+@media(max-width:880px){.verify{grid-template-columns:1fr}}
+.v{padding:44px 36px 44px 0;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.v:last-child{border-right:0}
+@media(max-width:880px){.v{border-right:0;padding-right:0}}
+.v .mono{color:var(--ember)}
+.v h4{font-size:21px;margin:18px 0 10px}
+.v p{font-size:14px;font-weight:300;color:var(--body);line-height:1.75;max-width:300px}
+/* statement */
+.statement{background:var(--ink);color:var(--ivory);padding:146px 0;position:relative;overflow:hidden}
+.statement::before{content:"";position:absolute;left:50%;bottom:-360px;transform:translateX(-50%);width:1000px;height:640px;
+  background:radial-gradient(ellipse,rgba(180,101,60,.2) 0%,transparent 66%);pointer-events:none}
+.statement .wrap{position:relative;z-index:2;text-align:center;max-width:860px}
+.statement h2{font-size:clamp(34px,5vw,62px);margin-bottom:28px}
+.statement h2 em{font-style:italic;color:var(--ember-l)}
+.statement p{color:#A29C8F;font-weight:200;font-size:16.5px;margin:0 auto 44px;max-width:500px;line-height:1.75}
 /* dealer */
-.dealer{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-@media(max-width:860px){.dealer{grid-template-columns:1fr;gap:40px}}
-.dealer h2{font-size:clamp(30px,3.8vw,46px);margin-bottom:22px}
+.dealer{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start}
+@media(max-width:900px){.dealer{grid-template-columns:1fr;gap:44px}}
+.dealer h2{font-size:clamp(30px,3.8vw,46px);margin-bottom:24px}
 .dealer h2 em{font-style:italic;color:var(--ember)}
-.dealer p{color:var(--body);font-weight:300;font-size:16px;line-height:1.75;margin-bottom:18px}
-.tags{list-style:none;border-top:1px solid var(--line);margin-top:34px}
-.tags li{padding:16px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink);display:flex;justify-content:space-between;gap:20px}
-.tags li span{color:var(--muted);font-size:12px;letter-spacing:.04em}
+.dealer p{color:var(--body);font-weight:300;font-size:15.5px;line-height:1.8;margin-bottom:18px;max-width:460px}
+.tags{list-style:none;border-top:1px solid var(--line)}
+.tags li{padding:17px 0;border-bottom:1px solid var(--line);font-size:13.5px;display:flex;justify-content:space-between;gap:20px}
+.tags li span{color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+/* faq */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:26px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;align-items:center;font-family:'Instrument Serif',serif;font-size:22px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .plus{font-family:'Inter Tight',sans-serif;font-size:16px;color:var(--ember);transition:transform .45s var(--ease)}
+.faq details[open] summary .plus{transform:rotate(45deg)}
+.faq p{margin-top:18px;font-size:14.5px;font-weight:300;color:var(--body);max-width:640px;line-height:1.8}
 /* footer */
-footer{padding:64px 0 72px;border-top:1px solid var(--line)}
-footer .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
-footer .brand{color:var(--ink)}
-footer .brand i{color:var(--ember)}
-footer p{font-size:12px;color:var(--muted);font-weight:300;line-height:1.8}
+footer{background:var(--ink);color:var(--ivory);padding:96px 0 48px;border-top:1px solid var(--line-dark)}
+.foot-top{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;padding-bottom:64px;border-bottom:1px solid var(--line-dark)}
+.foot-top h2{font-size:clamp(32px,4.4vw,54px);max-width:600px}
+.foot-top h2 em{font-style:italic;color:var(--ember-l)}
+.foot-bottom{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;padding-top:34px}
+.foot-bottom p{font-size:11.5px;color:#6E695F;font-weight:300;line-height:1.9;letter-spacing:.01em}
+.foot-bottom .brand{font-size:21px}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr}}
 /* reveal */
-.up{opacity:0;transform:translateY(14px);animation:up .9s var(--ease) forwards}
-@keyframes up{to{opacity:1;transform:none}}
-.d1{animation-delay:.06s}.d2{animation-delay:.16s}.d3{animation-delay:.26s}.d4{animation-delay:.36s}
+.rv{opacity:0;transform:translateY(18px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.track{animation:none}}
 </style>
 </head>
 <body>
+<div class="grain"></div>
 
-<nav>
+<nav id="nav">
   <div class="wrap">
     <a class="brand" href="#top">Gas <i>Poa</i></a>
-    <ul>
-      <li><a href="#how">How it works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#dealers">For dealers</a></li>
-      <li><a class="nav-cta" href="#order">Order</a></li>
-    </ul>
+    <div class="navlinks">
+      <a href="#service">Service</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#dealers">For dealers</a>
+      <a href="#questions">Questions</a>
+      <a class="nav-cta" href="#order">Order gas</a>
+    </div>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="kicker up"><span class="dash"></span><span>Nairobi · LPG delivery</span></div>
-    <h1 class="up d1">Gas, delivered<br>on <em>your terms.</em></h1>
-    <p class="lede up d2">A fixed price per cylinder, verified weight on arrival, and one message to reorder. No queues, no haggling, no carrying.</p>
-    <div class="btns up d3">
-      <a class="btn btn-solid" href="#pricing">View pricing</a>
-      <a class="btn btn-ghost" href="#how">How it works</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="kicker"><span class="dash"></span><span>Nairobi · LPG delivery</span></div>
+        <h1>Gas, delivered<br>on <em>your terms.</em></h1>
+        <p class="lede">A fixed price per cylinder, a verified weight on arrival, and one message to reorder. No queue, no haggling, no carrying.</p>
+        <div class="btns">
+          <a class="btn btn-solid" href="#pricing">View pricing</a>
+          <a class="btn btn-ghost" href="#service">How it works</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="assets/hero.jpg" alt="A sealed gas cylinder in warm evening light" />
+        <span class="img-tag">Sealed · Weighed · Delivered</span>
+      </div>
     </div>
-    <div class="hero-foot up d4">
+    <div class="hero-meta">
       <div><b>Fixed</b>Monthly price, no swings</div>
       <div><b>Verified</b>Sealed and weighed</div>
       <div><b>Same day</b>Within Nairobi</div>
@@ -153,17 +214,24 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;line-height:1.8}
   </div>
 </header>
 
-<section id="how">
+<div class="strip">
+  <div class="track">
+    <span>Kilimani</span><span>Lavington</span><span>Kileleshwa</span><span>Westlands</span><span>Kileleshwa</span><span>Karen</span><span>South B</span><span>Langata</span><span>Riverside</span><span>Parklands</span>
+    <span>Kilimani</span><span>Lavington</span><span>Kileleshwa</span><span>Westlands</span><span>Kileleshwa</span><span>Karen</span><span>South B</span><span>Langata</span><span>Riverside</span><span>Parklands</span>
+  </div>
+</div>
+
+<section id="service">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <p class="mono">01 — The service</p>
       <div>
         <h2>Three steps. <em>Nothing to install.</em></h2>
-        <p class="note">If you can send a WhatsApp message, you can order gas. No app, no account, no card details held on file.</p>
+        <p class="note">If you can send a message, you can order gas. No app, no account, no card held on file.</p>
       </div>
     </div>
 
-    <div class="steps">
+    <div class="steps rv">
       <div class="step">
         <span class="n">I</span>
         <h3>Send a message</h3>
@@ -172,16 +240,16 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;line-height:1.8}
       <div class="step">
         <span class="n">II</span>
         <h3>We confirm the price</h3>
-        <p>The price is fixed for the month and identical for every customer. You approve before anything is dispatched.</p>
+        <p>The rate is fixed for the month and identical for every customer. You approve before anything is dispatched.</p>
       </div>
       <div class="step">
         <span class="n">III</span>
         <h3>It arrives, you pay</h3>
-        <p>The cylinder arrives sealed and weighed. M-Pesa the rider on the doorstep once you're satisfied.</p>
+        <p>The cylinder arrives sealed and weighed. M-Pesa the rider on the doorstep once you are satisfied.</p>
       </div>
     </div>
 
-    <div style="margin-top:88px">
+    <div style="margin-top:92px" class="rv">
       <div class="chat-shell">
         <div class="chat-head"><span class="dot"></span><span>WhatsApp · Gas Poa</span></div>
         <div class="chat">
@@ -196,17 +264,28 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;line-height:1.8}
   </div>
 </section>
 
-<section id="pricing" style="padding-top:0">
+<figure class="band-img">
+  <img src="assets/doorstep.jpg" alt="A sealed cylinder handed over at a doorway" />
+  <div class="overlay"></div>
+  <div class="cap">
+    <div class="wrap">
+      <p class="mono">Last mile</p>
+      <h3>Handed over at your door, <em>not left at a gate.</em></h3>
+    </div>
+  </div>
+</figure>
+
+<section id="pricing">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <p class="mono">02 — Pricing</p>
       <div>
         <h2>One price. <em>Set for the month.</em></h2>
-        <p class="note">Delivery within Nairobi estates included. We do not move prices between suppliers; the rate you see is the rate you pay.</p>
+        <p class="note">Delivery within Nairobi estates included. We do not shift prices between suppliers; the rate you see is the rate you pay.</p>
       </div>
     </div>
 
-    <div class="plans">
+    <div class="plans rv">
       <div class="plan">
         <span class="flag"></span>
         <h3>6kg</h3>
@@ -218,7 +297,7 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;line-height:1.8}
           <li>Seal and weight verified</li>
           <li>M-Pesa on arrival</li>
         </ul>
-        <a class="btn" href="#order">Order</a>
+        <a class="btn btn-line" href="#order">Order</a>
       </div>
       <div class="plan feature">
         <span class="flag">Most chosen</span>
@@ -232,7 +311,7 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;line-height:1.8}
           <li>M-Pesa on arrival</li>
           <li>Priority on weekends</li>
         </ul>
-        <a class="btn" href="#order">Order</a>
+        <a class="btn btn-dark" href="#order">Order</a>
       </div>
       <div class="plan">
         <span class="flag"></span>
@@ -245,25 +324,53 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;line-height:1.8}
           <li>One invoice monthly</li>
           <li>Dedicated line</li>
         </ul>
-        <a class="btn" href="#order">Enquire</a>
+        <a class="btn btn-line" href="#order">Enquire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="mono">03 — Assurance</p>
+      <div>
+        <h2>What is checked <em>before it reaches you.</em></h2>
+      </div>
+    </div>
+    <div class="verify rv">
+      <div class="v">
+        <p class="mono">Weight</p>
+        <h4>Weighed in front of you</h4>
+        <p>The cylinder is placed on a scale at your door. Short weight is the most common complaint in this market, and the easiest to end.</p>
+      </div>
+      <div class="v">
+        <p class="mono">Seal</p>
+        <h4>Tamper seal intact</h4>
+        <p>You inspect the seal before payment. Refills come from a single vetted depot, not from whichever station is cheapest that day.</p>
+      </div>
+      <div class="v">
+        <p class="mono">Payment</p>
+        <h4>Nothing upfront</h4>
+        <p>No deposit, no card on file. You pay the rider by M-Pesa once the cylinder is in your hands and the weight is confirmed.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="statement" id="order">
-  <div class="wrap">
+  <div class="wrap rv">
     <h2>Nobody should carry a cylinder <em>up four flights.</em></h2>
-    <p>Tell us your estate and we'll open service there next. Early households set the delivery routes.</p>
+    <p>Tell us your estate and we will open service there next. Early households set the delivery routes.</p>
     <a class="btn btn-solid" href="#top">Join the waitlist</a>
   </div>
 </section>
 
 <section id="dealers">
   <div class="wrap">
-    <div class="dealer">
+    <div class="dealer rv">
       <div>
-        <p class="mono" style="margin-bottom:26px">03 — For dealers</p>
+        <p class="mono" style="margin-bottom:28px">04 — For dealers</p>
         <h2>You keep the gas. <em>We bring the orders.</em></h2>
         <p>Gas Poa is a demand and delivery layer, not a competing depot. Orders from Nairobi estates come to your counter; we handle the customer relationship and the last mile.</p>
         <p>You retain your walk-in trade, your supplier relationships and your margin. We take a small fee per cylinder delivered on your behalf.</p>
@@ -281,15 +388,62 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;line-height:1.8}
   </div>
 </section>
 
+<section id="questions" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="mono">05 — Questions</p>
+      <div><h2>Before you <em>order.</em></h2></div>
+    </div>
+    <div class="faq rv">
+      <details>
+        <summary>Which areas do you deliver to? <span class="plus">+</span></summary>
+        <p>Kilimani, Lavington, Kileleshwa, Westlands, Riverside, Parklands, South B, Langata and Karen. We add estates as route density allows.</p>
+      </details>
+      <details>
+        <summary>How is the price fixed? <span class="plus">+</span></summary>
+        <p>We agree a monthly rate with one vetted depot and hold it for the month, so your price does not move when the market does.</p>
+      </details>
+      <details>
+        <summary>Do I need my own cylinder? <span class="plus">+</span></summary>
+        <p>No. We exchange on delivery: full cylinder in, empty out. If you have no cylinder at all, a refundable deposit applies.</p>
+      </details>
+      <details>
+        <summary>Can I schedule a regular refill? <span class="plus">+</span></summary>
+        <p>Yes. Households that run out predictably can set a cycle, and we message you two days before it is due.</p>
+      </details>
+      <details>
+        <summary>Is this regulated? <span class="plus">+</span></summary>
+        <p>LPG handling in Kenya is licensed by EPRA. Gas Poa is pursuing registration and licensing ahead of launch, and will not operate before it is granted.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
-    <div>
-      <a class="brand" href="#top">Gas <i>Poa</i></a>
-      <p style="margin-top:8px">Nairobi, Kenya</p>
+    <div class="foot-top">
+      <h2>Gas, without the <em>errand.</em></h2>
+      <a class="btn btn-solid" href="#order">Join the waitlist</a>
     </div>
-    <p style="text-align:right">Concept presentation.<br>Registration and ERWCA licensing in progress.</p>
+    <div class="foot-bottom">
+      <div>
+        <a class="brand" href="#top">Gas <i>Poa</i></a>
+        <p style="margin-top:10px">Nairobi, Kenya</p>
+      </div>
+      <p style="text-align:right">Concept presentation.<br>Company registration and EPRA licensing in progress.</p>
+    </div>
   </div>
 </footer>
 
+<script>
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('solid', window.scrollY > 60);
+onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
